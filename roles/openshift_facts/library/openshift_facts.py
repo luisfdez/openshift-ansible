@@ -955,7 +955,7 @@ def set_sdn_facts_if_unset(facts, system_facts):
 def set_nodename(facts):
     if 'node' in facts and 'common' in facts:
         if 'cloudprovider' in facts and facts['cloudprovider']['kind'] == 'openstack':
-            facts['node']['nodename'] = facts['provider']['metadata']['hostname'].replace('.epfl.ch', '')
+            facts['node']['nodename'] = facts['provider']['metadata']['hostname'].replace('.bbp.epfl.ch', '')
         else:
             facts['node']['nodename'] = facts['common']['hostname'].lower()
     return facts
